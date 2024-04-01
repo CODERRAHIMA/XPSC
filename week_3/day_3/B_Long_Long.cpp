@@ -9,29 +9,31 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int TC;
+    ll TC;
     cin >> TC;
     while (TC--)
     {
-        int n;
+        ll n;
         cin >> n;
-        vector<int> v(n);
-        int sum = 0;
-        for (int i = 0; i < n; i++)
+        ll i, arr[n], sum = 0;
+
+        for (i = 0; i < n; ++i)
+            cin >> arr[i];
+        
+        for (i = 0; i < n; ++i)
+            sum = sum + abs(arr[i]);
+        
+        ll count = 0;
+        for (i = 0; i < n; i++)
         {
-            cin >> v[i];
-            sum += abs(v[i]);
-        }
-        int count = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (v[i] < 0)
+            if (arr[i] < 0)
             {
-                count++;
-                while (v[i] <= 0 && i < n)
+                i++;
+                while (arr[i] <= 0)
                 {
                     i++;
                 }
+                count++;
             }
         }
         cout << sum << " " << count << "\n";
