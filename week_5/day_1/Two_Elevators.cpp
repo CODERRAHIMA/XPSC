@@ -20,8 +20,8 @@ int main()
             cout << 1;
         else
         {
-            int x = abs(a - 1);
-            int y = abs(b - c) + abs(1 - c);
+            int x = abs(a - 1); // 2 //2
+            int y = abs(b - c) + abs(1 - c); // 1+1=2 //1+0=1
             if (x < y)
                 cout << 1;
             else if (x > y)
