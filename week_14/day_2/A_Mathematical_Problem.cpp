@@ -22,13 +22,13 @@ int main()
         cin >> n >> s;
         for (int i = 1; i < n; i++)
         {
-            int num = stoi(s.substr(i - 1, 2)); // 找两位数
+            int num = stoi(s.substr(i - 1, 2)); 
             for (int j = 0; j < n; j++)
             {
                 if (j == i - 1 || j == i)
                     continue;
                 int temp = s[j] - '0';
-                num = min(num * temp, num + temp); // 选定两位数后 选择+ x符号
+                num = min(num * temp, num + temp); 
             }
             ans = min(ans, num);
         }
