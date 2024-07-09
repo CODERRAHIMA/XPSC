@@ -18,17 +18,27 @@ int main()
     {
         int n;
         cin >> n;
+        vi a;
         map<int, int> mp;
-        ll ans = 0;
         for (int i = 0; i < n; i++)
         {
-            int x;
-            cin >> x;
-            x -= i;
-            ans += mp[x];
-            mp[x]++;
+            int b;
+            cin >> b;
+            b = b % 10;
+            if (mp[b] >= 3)
+                continue;
+            mp[b]++;
+            a.pb(b);
         }
-        cout << ans << endl;
+        bool ok = false;
+        for (int i = 0; i < a.size(); i++)
+            for (int j = i + 1; j < a.size(); j++)
+                for (int k = j + 1; k < a.size(); k++)
+                    if ((a[i] + a[j] + a[k]) % 10 == 3)
+                        ok = true;
+
+        if(ok) yes;
+        else no;
     }
     return 0;
 }
