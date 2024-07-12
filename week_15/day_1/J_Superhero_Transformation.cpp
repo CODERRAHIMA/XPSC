@@ -18,17 +18,17 @@ int main()
     for (int i = 0; i < s.size(); i++)
     {
         if (s[i] == 'a' or s[i] == 'e' or s[i] == 'i' or s[i] == 'o' or s[i] == 'u')
-            vS.push_back(i);
+            vS.pb(i);
         else
-            cntS.push_back(i);
+            cntS.pb(i);
     }
 
     for (int i = 0; i < t.size(); i++)
     {
         if (t[i] == 'a' or t[i] == 'e' or t[i] == 'i' or t[i] == 'o' or t[i] == 'u')
-            vT.push_back(i);
+            vT.pb(i);
         else
-            cntT.push_back(i);
+            cntT.pb(i);
     }
 
     if (vS == vT and cntS == cntT)
